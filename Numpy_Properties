@@ -1,0 +1,132 @@
+import numpy as np
+
+print("Task 1")
+
+a = np.arange(1,37)
+print("Array from 1 to 36:")
+print(a)
+
+b = a.reshape(6,6)
+print("\n6x6 matrix:")
+print(b)
+
+print("\nFirst three rows")
+print(b[0:3])
+
+print("\nLast two columns")
+print(b[:,4:6])
+
+print("\nDiagonal elements")
+print(np.diag(b))
+
+
+print("\nTask 2")
+
+arr = np.random.randint(10,101,20)
+print("Random array:")
+print(arr)
+
+print("\nNumbers greater than 50")
+print(arr[arr>50])
+
+print("\nEven numbers")
+print(arr[arr%2==0])
+
+new_arr = arr.copy()
+new_arr[new_arr%5==0] = -1
+
+print("\nArray after replacing numbers divisible by 5 with -1")
+print(new_arr)
+
+
+print("\nTask 3")
+
+m1 = np.random.randint(1,21,(4,4))
+m2 = np.random.randint(1,21,(4,4))
+
+print("Matrix 1")
+print(m1)
+
+print("\nMatrix 2")
+print(m2)
+
+print("\nAddition of matrices")
+print(m1+m2)
+
+print("\nElement wise multiplication")
+print(m1*m2)
+
+print("\nTranspose of matrix 1")
+print(m1.T)
+
+print("\nTranspose of matrix 2")
+print(m2.T)
+
+print("\nDeterminant of matrix 1")
+print(np.linalg.det(m1))
+
+
+print("\nTask 4")
+
+data = np.random.randint(1,51,(5,5))
+print("5x5 array")
+print(data)
+
+print("\nMean value")
+print(np.mean(data))
+
+print("\nMedian value")
+print(np.median(data))
+
+print("\nStandard deviation")
+print(np.std(data))
+
+print("\nVariance")
+print(np.var(data))
+
+print("\nMaximum value from each row")
+print(np.max(data,axis=1))
+
+
+print("\nTask 5")
+
+x = np.random.randint(1,10,(3,3))
+y = np.random.randint(1,10,(3,3))
+
+print("Array x")
+print(x)
+
+print("\nArray y")
+print(y)
+
+h = np.hstack((x,y))
+print("\nHorizontal stacking")
+print(h)
+
+v = np.vstack((x,y))
+print("\nVertical stacking")
+print(v)
+
+print("\nSplitting stacked array into 3 parts")
+parts = np.array_split(v,3)
+print(parts)
+
+
+print("\nTask 6")
+
+nums = np.random.randint(1,101,15)
+print("Random numbers")
+print(nums)
+
+print("\nNumbers divisible by 3 and 5")
+print(nums[(nums%3==0) & (nums%5==0)])
+
+nums2 = nums.copy()
+nums2[nums2%2!=0] = 0
+
+print("\nArray after replacing odd numbers with 0")
+print(nums2)
+
+c = np.sum(nums>60)
+print("\nCount of numbers greater than 60")
+print(c)
